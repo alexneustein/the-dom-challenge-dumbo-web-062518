@@ -1,5 +1,6 @@
-let counting = true;
+//Global Variables
 
+let counting = true;
 const counter = document.getElementById('counter')
 const btMinus = document.getElementById('-')
 const btPlus = document.getElementById('+')
@@ -11,11 +12,14 @@ const likesHash = {};
 const commentButton = document.getElementById('submit')
 const commentInput = document.getElementById('comment-input')
 
+//Start Counting On Page Load
 
 window.setInterval(function () {
   if (counting) {currentNumber++;
   counter.innerText = currentNumber;}
 },1000);
+
+//Button Functions
 
 function addOne() {
   currentNumber++;
@@ -62,6 +66,8 @@ function addComment() {
   commentsList.append(li)
   event.preventDefault();
 }
+
+//Event Handlers
 
 btPlus.addEventListener('click', () => {addOne()}, false);
 btMinus.addEventListener('click', () => {subtractOne()}, false);
